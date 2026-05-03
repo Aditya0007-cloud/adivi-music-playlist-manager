@@ -1,4 +1,4 @@
-import { ExternalLink, Heart, Loader2, Pause, Play, SkipBack, SkipForward, Volume2 } from "lucide-react";
+import { ExternalLink, Heart, Loader2, LogOut, Pause, Play, Radio, SkipBack, SkipForward, Volume2 } from "lucide-react";
 import { useMusic } from "../context/MusicContext";
 import { getYoutubeSearchUrl } from "../utils/youtubePlayer";
 
@@ -17,11 +17,16 @@ export const MusicPlayer = () => {
     volume,
     loadingPreview,
     sourceInfo,
+    spotifyConfigured,
+    spotifyConnected,
+    spotifyReady,
     togglePlay,
     next,
     previous,
     changeVolume,
-    seekTo
+    seekTo,
+    connectSpotify,
+    disconnectSpotify
   } = useMusic();
 
   return (
@@ -38,6 +43,19 @@ export const MusicPlayer = () => {
           <div className="min-w-0">
             <p className="truncate font-bold text-white">{currentSong?.title || "Adivi Player"}</p>
             <p className="truncate text-sm text-slate-400">{currentSong?.artist || "Pick a track to begin"}</p>
+            {spotifyConfigured && (
+              spotifyConnected ? (
+                <button onClick={disconnectSpotify} className="mt-1 flex items-center gap-1 text-xs font-bold text-adivi-mint md:hidden" title="Disconnect Spotify">
+                  <Radio size={13} />
+                  Spotify
+                </button>
+              ) : (
+                <button onClick={connectSpotify} className="mt-1 flex items-center gap-1 text-xs font-bold text-adivi-green md:hidden" title="Connect Spotify Premium">
+                  <Radio size={13} />
+                  Connect Spotify
+                </button>
+              )
+            )}
           </div>
         </div>
         <div>
@@ -74,9 +92,29 @@ export const MusicPlayer = () => {
           </div>
         </div>
         <div className="hidden items-center justify-end gap-3 md:flex">
+          {spotifyConfigured && (
+            spotifyConnected ? (
+              <div className="flex items-center gap-2 rounded-full border border-adivi-green/30 bg-adivi-green/10 px-3 py-2 text-xs font-bold text-adivi-mint">
+                <Radio size={15} className={spotifyReady ? "text-adivi-green" : "text-amber-300"} />
+                <span>{spotifyReady ? "Spotify Premium" : "Connecting"}</span>
+                <button onClick={disconnectSpotify} className="text-slate-400 transition hover:text-white" title="Disconnect Spotify">
+                  <LogOut size={14} />
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={connectSpotify}
+                className="flex items-center gap-2 rounded-full bg-adivi-green px-3 py-2 text-xs font-black text-slate-950 transition hover:scale-105"
+                title="Connect Spotify Premium"
+              >
+                <Radio size={15} />
+                Spotify
+              </button>
+            )
+          )}
           <div className="min-w-0 text-right">
-            <p className="truncate text-xs font-bold text-adivi-mint">{sourceInfo?.source ? `${sourceInfo.source} preview` : "Original preview"}</p>
-            <p className="truncate text-xs text-slate-500">{sourceInfo?.sourceTitle || "30 second legal audio"}</p>
+            <p className="truncate text-xs font-bold text-adivi-mint">{sourceInfo?.source || "Original preview"}</p>
+            <p className="truncate text-xs text-slate-500">{sourceInfo?.sourceTitle || "Connect Spotify for full songs"}</p>
           </div>
           <Volume2 size={18} className="text-slate-400" />
           <input type="range" min="0" max="1" step="0.01" value={volume} onChange={(event) => changeVolume(event.target.value)} className="w-28 accent-adivi-green" />

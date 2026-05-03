@@ -9,6 +9,7 @@ Adivi is a Spotify-inspired Music Playlist Manager built for a DSA laboratory de
 - Playlist CRUD with add/remove songs and drag-and-drop ordering
 - Favorite songs, recently played, trending playlists, user profile
 - 70 seeded demo songs, including a 45-song "Arijit Singh Essentials" playlist
+- Spotify Premium Web Playback SDK support for full-song playback, with preview fallback
 - Backend DSA utilities with comments for viva explanation
 
 ## DSA Concepts Used
@@ -76,6 +77,29 @@ npm start
 Frontend runs at `http://localhost:5173` and backend at `http://localhost:5001`.
 
 If MongoDB is unavailable, the backend falls back to an in-memory demo mode so the lab demo still opens locally. For real persistence, start MongoDB or use Atlas.
+
+## Spotify Premium Playback
+
+Adivi can play full tracks through the Spotify Web Playback SDK when the user connects a Spotify Premium account. The app still falls back to Apple Music/iTunes or Deezer previews when Spotify is not connected.
+
+1. Open the Spotify Developer Dashboard and create an app.
+2. Copy the Client ID.
+3. Add these redirect URIs in the Spotify app settings:
+
+```text
+http://localhost:5173/
+https://adivi-client.onrender.com/
+```
+
+4. Add the client ID to the frontend environment:
+
+```env
+VITE_SPOTIFY_CLIENT_ID=your_spotify_client_id
+```
+
+5. Restart local Vite or redeploy the frontend after changing the env variable.
+
+Spotify redirect URIs must match exactly, including the trailing slash.
 
 ## API Routes
 
@@ -166,6 +190,7 @@ Use MongoDB Atlas for production persistence. The local JSON fallback is only fo
 - Build command: `npm run build`
 - Output directory: `dist`
 - Add `VITE_API_URL=https://your-render-backend.onrender.com/api`
+- Add `VITE_SPOTIFY_CLIENT_ID=<spotify-client-id>` if you want full Spotify playback
 
 After both are deployed, update Render's `CLIENT_URL` to the final Vercel URL and redeploy the backend.
 
