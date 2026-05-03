@@ -10,10 +10,10 @@ export const connectDB = async () => {
       serverSelectionTimeoutMS: 3500
     });
     connected = true;
-    console.log("MongoDB connected for Adivi");
+    console.log("MongoDB connected for Beatify");
   } catch (error) {
     connected = false;
-    console.warn("MongoDB unavailable. Adivi is running in in-memory demo mode.");
+    console.warn("MongoDB unavailable. Beatify is running in in-memory demo mode.");
     console.warn(error.message);
   }
 };

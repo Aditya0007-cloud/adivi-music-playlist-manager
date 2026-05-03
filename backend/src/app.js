@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.json({ app: "Adivi", status: "running", message: "Music Playlist Manager API" });
+  res.json({ app: "Beatify", status: "running", message: "Music Playlist Manager API" });
 });
 
 app.use("/api/auth", authRoutes);
@@ -41,7 +41,7 @@ app.use((req, res) => {
 
 app.use((error, req, res, next) => {
   console.error(error);
-  res.status(500).json({ message: "Adivi server error", error: error.message });
+  res.status(500).json({ message: "Beatify server error", error: error.message });
 });
 
 export default app;

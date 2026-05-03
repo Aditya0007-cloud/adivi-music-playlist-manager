@@ -1,4 +1,4 @@
-// Adivi DSA utility file.
+// Beatify DSA utility file.
 // These algorithms are intentionally simple and commented for a college viva.
 
 export class LinkedListNode {
@@ -53,7 +53,7 @@ export const linearSongSearch = (songs, query = "") => {
 };
 
 // Sorting: JavaScript arrays act like dynamic arrays, and this comparator
-// lets Adivi sort by song name, artist, or duration.
+// lets Beatify sort by song name, artist, or duration.
 export const sortSongs = (songs, sortBy = "title") => {
   const key = sortBy === "artist" ? "artist" : sortBy === "duration" ? "duration" : "title";
   return [...songs].sort((a, b) => {

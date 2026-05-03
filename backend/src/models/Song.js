@@ -9,7 +9,7 @@ const songSchema = new mongoose.Schema(
     coverImage: { type: String, required: true },
     audioUrl: { type: String, required: true },
     previewUrl: { type: String, default: "" },
-    source: { type: String, default: "Adivi" },
+    source: { type: String, default: "Beatify" },
     sourceLink: { type: String, default: "" },
     appleTrackId: { type: Number, index: true, sparse: true },
     youtubeQuery: { type: String, default: "" },

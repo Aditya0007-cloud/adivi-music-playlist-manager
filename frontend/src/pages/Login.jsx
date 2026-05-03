@@ -38,7 +38,7 @@ export default function Login() {
         <div className="mb-8 flex justify-center">
           <Logo />
         </div>
-        <h1 className="text-center text-3xl font-black text-white">Adivi</h1>
+        <h1 className="text-center text-3xl font-black text-white">Beatify</h1>
         <p className="mt-2 text-center text-sm text-slate-400">Spotify-inspired Music Playlist Manager for discovering and saving your music.</p>
         <div className="mt-7 grid grid-cols-2 rounded-lg bg-white/5 p-1">
           {["login", "signup"].map((item) => (
@@ -69,7 +69,7 @@ export default function Login() {
             <input required minLength={6} type="password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} className="h-12 w-full rounded-lg border border-white/10 bg-white/10 px-4 text-white outline-none focus:border-adivi-green" />
           </label>
           <button disabled={busy} className="h-12 w-full rounded-lg bg-adivi-green font-black text-slate-950 transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60">
-            {busy ? "Loading..." : mode === "login" ? "Login to Adivi" : "Create Adivi Account"}
+            {busy ? "Loading..." : mode === "login" ? "Login to Beatify" : "Create Beatify Account"}
           </button>
         </form>
       </motion.section>

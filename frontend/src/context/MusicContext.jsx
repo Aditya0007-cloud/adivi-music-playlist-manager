@@ -281,7 +281,7 @@ export const MusicProvider = ({ children }) => {
         if (token) {
           setSpotifyToken(token);
           replaceSpotifyCallbackUrl();
-          toast.success("Spotify connected to Adivi");
+          toast.success("Spotify connected to Beatify");
         }
       })
       .catch((error) => {
@@ -299,7 +299,7 @@ export const MusicProvider = ({ children }) => {
       if (cancelled || !window.Spotify || spotifyPlayerRef.current) return;
 
       const player = new window.Spotify.Player({
-        name: "Adivi Web Player",
+        name: "Beatify Web Player",
         volume,
         getOAuthToken: async (callback) => {
           const accessToken = await getSpotifyAccessToken();

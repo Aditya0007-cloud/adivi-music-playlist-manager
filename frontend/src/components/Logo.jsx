@@ -14,7 +14,7 @@ export const Logo = ({ compact = false }) => (
     </motion.div>
     {!compact && (
       <div>
-        <p className="text-xl font-black tracking-normal text-white">Adivi</p>
+        <p className="text-xl font-black tracking-normal text-white">Beatify</p>
         <p className="text-xs uppercase tracking-[0.22em] text-adivi-mint">music dsa lab</p>
       </div>
     )}

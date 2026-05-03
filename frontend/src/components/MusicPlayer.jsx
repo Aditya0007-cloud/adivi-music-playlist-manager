@@ -41,7 +41,7 @@ export const MusicPlayer = () => {
             </div>
           )}
           <div className="min-w-0">
-            <p className="truncate font-bold text-white">{currentSong?.title || "Adivi Player"}</p>
+            <p className="truncate font-bold text-white">{currentSong?.title || "Beatify Player"}</p>
             <p className="truncate text-sm text-slate-400">{currentSong?.artist || "Pick a track to begin"}</p>
             {spotifyConfigured && (
               spotifyConnected ? (

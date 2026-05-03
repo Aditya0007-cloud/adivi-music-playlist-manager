@@ -6,7 +6,7 @@ const gradients = [
   "from-red-400 via-pink-400 to-purple-500"
 ];
 
-export const generatePlaylistCover = (name = "Adivi") => {
+export const generatePlaylistCover = (name = "Beatify") => {
   const total = [...name].reduce((sum, char) => sum + char.charCodeAt(0), 0);
   return gradients[total % gradients.length];
 };

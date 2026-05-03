@@ -194,7 +194,7 @@ export const trendingPlaylists = async (req, res) => {
       },
       {
         id: "trend-1",
-        name: "Adivi Top Algorithms",
+        name: "Beatify Top Algorithms",
         description: "Most-played DSA inspired tracks",
         coverGradient: "from-emerald-400 via-lime-300 to-cyan-400",
         songs: songs.slice(0, 6).map((song) => ({ ...song, id: String(song._id || song.id) }))

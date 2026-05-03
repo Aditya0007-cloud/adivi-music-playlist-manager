@@ -23,7 +23,7 @@ const dsaSongRows = [
   ["Backtrack", "Maze Runnerz", "Try Again", 229, "Electronic", 6],
   ["Base Case", "Recursa", "Return", 184, "Focus", 7],
   ["Edge Weight", "Dijkstra Drive", "Shortest", 238, "Dance", 8],
-  ["Adivi Anthem", "Adivi Studio", "Lab Demo", 201, "Brand", 9]
+  ["Beatify Anthem", "Beatify Studio", "Lab Demo", 201, "Brand", 9]
 ];
 
 export const arijitSongRows = [

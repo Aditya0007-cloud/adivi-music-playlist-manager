@@ -22,7 +22,7 @@ export default function Profile() {
             <UserRound size={42} />
           </div>
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-adivi-mint">Adivi Profile</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-adivi-mint">Beatify Profile</p>
             <h1 className="mt-2 text-3xl font-black text-white">{user?.name}</h1>
             <p className="mt-2 flex items-center gap-2 text-slate-400">
               <Mail size={16} /> {user?.email}

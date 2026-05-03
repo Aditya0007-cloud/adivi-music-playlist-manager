@@ -1,6 +1,6 @@
-# Adivi
+# Beatify
 
-Adivi is a Spotify-inspired Music Playlist Manager built for a DSA laboratory demonstration. It uses React, Tailwind CSS, Framer Motion, Node.js, Express, JWT authentication, and MongoDB with Mongoose models.
+Beatify is a Spotify-inspired Music Playlist Manager built for a DSA laboratory demonstration. It uses React, Tailwind CSS, Framer Motion, Node.js, Express, JWT authentication, and MongoDB with Mongoose models.
 
 ## Features
 
@@ -80,7 +80,7 @@ If MongoDB is unavailable, the backend falls back to an in-memory demo mode so t
 
 ## Spotify Premium Playback
 
-Adivi can play full tracks through the Spotify Web Playback SDK when the user connects a Spotify Premium account. The app still falls back to Apple Music/iTunes or Deezer previews when Spotify is not connected.
+Beatify can play full tracks through the Spotify Web Playback SDK when the user connects a Spotify Premium account. The app still falls back to Apple Music/iTunes or Deezer previews when Spotify is not connected.
 
 1. Open the Spotify Developer Dashboard and create an app.
 2. Copy the Client ID.
@@ -196,6 +196,6 @@ After both are deployed, update Render's `CLIENT_URL` to the final Vercel URL an
 
 ## Screenshot Preview Descriptions
 
-- Login screen: Adivi wave logo, dark gradient glass panel, animated background glow
+- Login screen: Beatify wave logo, dark gradient glass panel, animated background glow
 - Dashboard: Left sidebar, neon search, album cards, trending playlists, mini player
 - Playlist view: Glass playlist cards, song rows, drag-and-drop order handles

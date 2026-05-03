@@ -23,7 +23,7 @@ const seedSongs = async () => {
   }
 
   if (inserted > 0) {
-    console.log(`Seeded ${inserted} new Adivi sample songs`);
+    console.log(`Seeded ${inserted} new Beatify sample songs`);
   }
 };
 
@@ -33,7 +33,7 @@ const start = async () => {
 
   const port = process.env.PORT || 5001;
   app.listen(port, () => {
-    console.log(`Adivi API listening on http://localhost:${port}`);
+    console.log(`Beatify API listening on http://localhost:${port}`);
   });
 };
 

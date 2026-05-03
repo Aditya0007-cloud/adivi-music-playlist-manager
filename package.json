@@ -2,7 +2,7 @@
   "name": "adivi-music-playlist-manager",
   "version": "1.0.0",
   "private": true,
-  "description": "Adivi - Spotify-inspired DSA Music Playlist Manager",
+  "description": "Beatify - Spotify-inspired DSA Music Playlist Manager",
   "scripts": {
     "start": "concurrently \"npm run start --workspace backend\" \"npm run start --workspace frontend\"",
     "dev": "npm run start",

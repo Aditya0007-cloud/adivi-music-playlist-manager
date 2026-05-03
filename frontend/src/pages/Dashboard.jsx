@@ -78,7 +78,7 @@ export default function Dashboard() {
   const ensurePlaylistAndAdd = async (song) => {
     let target = selected || playlists[0];
     if (!target) {
-      const { data } = await api.post("/playlists", { name: "My Adivi Mix", description: "Auto-created playlist" });
+      const { data } = await api.post("/playlists", { name: "My Beatify Mix", description: "Auto-created playlist" });
       target = data.playlist;
       setPlaylists([target]);
     }
@@ -137,7 +137,7 @@ export default function Dashboard() {
 
       <section className="mb-8 grid gap-4 lg:grid-cols-[1.3fr_0.7fr]">
         <div className="glass overflow-hidden rounded-lg p-6">
-          <p className="text-sm uppercase tracking-[0.22em] text-adivi-mint">Now in Adivi</p>
+          <p className="text-sm uppercase tracking-[0.22em] text-adivi-mint">Now in Beatify</p>
           <h2 className="mt-2 text-4xl font-black text-white">Build your perfect playlist library.</h2>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">Search any artist, play real previews, save favorites, and organize the songs you love into custom playlists.</p>
         </div>

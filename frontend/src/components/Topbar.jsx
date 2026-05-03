@@ -24,7 +24,7 @@ export const Topbar = ({ search, setSearch, sortBy, setSortBy }) => {
           <Logo />
         </div>
         <div className="hidden lg:block">
-          <p className="text-sm uppercase tracking-[0.25em] text-adivi-mint">Adivi Dashboard</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-adivi-mint">Beatify Dashboard</p>
           <h1 className="mt-1 text-3xl font-black text-white">Music Playlist Manager</h1>
         </div>
       </div>

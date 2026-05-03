@@ -15,7 +15,7 @@ const songs = sampleSongs.map((song, index) => ({
   ...song,
   id: String(index + 1),
   _id: String(index + 1),
-  source: song.source || "Adivi"
+  source: song.source || "Beatify"
 }));
 
 const users = new Map();
@@ -64,7 +64,7 @@ const loadStore = () => {
     playlists.push(...(data.playlists || []));
     songCounter = Math.max(songCounter, ...songs.map((song) => Number(song.id) || 0)) + 1;
   } catch (error) {
-    console.warn("Could not load Adivi demo store. Starting with an empty fallback store.");
+    console.warn("Could not load Beatify demo store. Starting with an empty fallback store.");
     console.warn(error.message);
   }
 };
