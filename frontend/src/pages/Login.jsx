@@ -18,7 +18,13 @@ export default function Login() {
     event.preventDefault();
     setBusy(true);
     try {
-      await (mode === "login" ? login({ email: form.email, password: form.password }) : signup(form));
+      if (mode === "login") {
+        await login({ email: form.email, password: form.password });
+      } else {
+        await signup(form);
+        setMode("login");
+        setForm((current) => ({ ...current, name: "", password: "" }));
+      }
     } catch (error) {
       toast.error(error.response?.data?.message || "Authentication failed");
     } finally {

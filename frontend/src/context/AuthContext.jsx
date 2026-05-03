@@ -29,7 +29,14 @@ export const AuthProvider = ({ children }) => {
     const { data } = await api.post(`/auth/${mode}`, payload);
     localStorage.setItem("adivi_token", data.token);
     setUser(data.user);
-    toast.success(mode === "signup" ? "Welcome to Adivi" : "Back in the mix");
+    toast.success("Back in the mix");
+  };
+
+  const signupOnly = async (payload) => {
+    await api.post("/auth/signup", payload);
+    localStorage.removeItem("adivi_token");
+    setUser(null);
+    toast.success("Account created. Please login to continue.");
   };
 
   const logout = () => {
@@ -39,7 +46,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const value = useMemo(
-    () => ({ user, setUser, loading, login: (payload) => authenticate("login", payload), signup: (payload) => authenticate("signup", payload), logout }),
+    () => ({ user, setUser, loading, login: (payload) => authenticate("login", payload), signup: signupOnly, logout }),
     [user, loading]
   );
 
